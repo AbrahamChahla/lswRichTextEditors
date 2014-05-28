@@ -12,8 +12,15 @@ myapp.lsWire = myapp.lsWire || {};
 
 		// ============================================================================================
 		// Initialize the ckEditor, without the jQuery plugin, JavaScript only
+		// This works on a textArea control
 		// ============================================================================================
 		initializeCkEditor: function (element, contentItem, customToolbar, readOnly) {
+
+			/// <summary>Initialize a text area control as a Rich Text Editor using CkEditor</summary>
+			/// <param name="element" type="object">DOM Element of the control</param>
+			/// <param name="contentItem" type="object">contentItem of the control</param>
+			/// <param name="customToolbar" type="object">Optional - Array of strings on which tools to include on the toolbar</param>
+			/// <param name="readOnly" type="boolean">Optional - Turn the editor into a read only view</param>
 
 			// Obvious, creating our toolbar
 			var baseToolbar = [
@@ -72,8 +79,15 @@ myapp.lsWire = myapp.lsWire || {};
 
 		// ============================================================================================
 		// Initialize the ckEditor, using the jQuery plugin, notice how similar
+		// This works on a textArea control
 		// ============================================================================================
 		initializeCkEditorJQuery: function (element, contentItem, customToolbar, readOnly) {
+
+			/// <summary>Initialize a text area control as a Rich Text Editor using jQuery plugin for CkEditor</summary>
+			/// <param name="element" type="object">DOM Element of the control</param>
+			/// <param name="contentItem" type="object">contentItem of the control</param>
+			/// <param name="customToolbar" type="object">Optional - Array of strings on which tools to include on the toolbar</param>
+			/// <param name="readOnly" type="boolean">Optional - Turn the editor into a read only view</param>
 
 			// Obvious, creating our toolbar
 			var baseToolbar = [
@@ -132,8 +146,14 @@ myapp.lsWire = myapp.lsWire || {};
 
 		// ============================================================================================
 		// Initialzie our Kendo UI Editor, Easiest of the bunch and most powerful!
+		// The Kendo UI editor works from a custom control vs textArea
 		// ============================================================================================
 		initializeKendoEditor: function (element, contentItem, customToolbar) {
+
+			/// <summary>Initialize a text area control as a Rich Text Editor using Kendo UI Editor</summary>
+			/// <param name="element" type="object">DOM Element of the control</param>
+			/// <param name="contentItem" type="object">contentItem of the control</param>
+			/// <param name="customToolbar" type="object">Optional - Array of strings on which tools to include on the toolbar</param>
 
 			var baseToolbar = [
 					"bold", "italic", "underline", "strikethrough",
@@ -170,8 +190,14 @@ myapp.lsWire = myapp.lsWire || {};
 
 		// ============================================================================================
 		// Initialzie the TinyMCE editor, pretty powerful but at a cost of complexity
+		// TinyMCE works off of a textArea control
 		// ============================================================================================
 		initializeTinyMCE: function (element, contentItem, customToolbar) {
+
+			/// <summary>Initialize a text area control as a Rich Text Editor using CkEditor</summary>
+			/// <param name="element" type="object">DOM Element of the control</param>
+			/// <param name="contentItem" type="object">contentItem of the control</param>
+			/// <param name="customToolbar" type="object">Optional - Space seperated list of strings on which tools to include on the toolbar</param>
 
 			// Wait for the our parent to get its dimensions
 			lsWire.editors.onceElementAttrChange(element, "height", function () {
@@ -181,9 +207,12 @@ myapp.lsWire = myapp.lsWire || {};
 				var mceClass = "tinymce_" + txtArea.id;
 				txtArea.classList.add(mceClass);
 
+				var toolbar = customToolbar != undefined ? customToolbar : baseToolbar;
+
 				// Go initialize the editor on this text area
 				tinymce.init({
 					selector: 'textarea.' + mceClass,
+					toolbar: toolbar,
 					plugins: [
 						"save"
 					],
@@ -218,6 +247,11 @@ myapp.lsWire = myapp.lsWire || {};
 		// This is more responsive then trying to guess how long your setTimeout should be
 		// ============================================================================================
 		onceElementAttrChange: function (element, attrName, method) {
+
+			/// <summary>Monitor the attribute of a DOM element, when it changes, fire off the method</summary>
+			/// <param name="element" type="object">DOM Element of the control</param>
+			/// <param name="attrName" type="string">Name of the attribute to monitor</param>
+			/// <param name="method" type="object">Method to execute when the attribute changes</param>
 
 			var $element = $(element);
 			var origValue = $element.css(attrName);

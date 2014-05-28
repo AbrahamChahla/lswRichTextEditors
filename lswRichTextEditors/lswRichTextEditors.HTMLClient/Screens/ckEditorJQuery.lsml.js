@@ -3,15 +3,20 @@
 
 myapp.ckEditorJQuery.Body_postRender = function (element, contentItem) {
 
+	// =========================================================================
+	// Note that the CkEditor works off of a textarea control vs a custom control
+	// =========================================================================
+
 	// Lets give the editor 80% of the screen, overall good compromise.
 	element.style.maxHeight = '80%';
 
+	// Wire up our ckEditor 
 	lsWire.editors.initializeCkEditorJQuery(element, contentItem);
 
 };
 myapp.ckEditorJQuery.beforeApplyChanges = function (screen) {
 
-	// Hack - If use goes from editor to LightSwitch screen save button
+	// Hack - If user goes from editor to the Save button on the LightSwitch screen,
 	// the LightSwitch save fires before the blur event of the editor
 	// which doesnt update the contentItem value fast enough.  So
 	// we are forced to add an additional step outside of the blur
