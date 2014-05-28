@@ -207,15 +207,17 @@ myapp.lsWire = myapp.lsWire || {};
 				var mceClass = "tinymce_" + txtArea.id;
 				txtArea.classList.add(mceClass);
 
-				var toolbar = customToolbar != undefined ? customToolbar : baseToolbar;
+				var toolbar = customToolbar != undefined ? customToolbar : "insertfile undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image";
 
 				// Go initialize the editor on this text area
 				tinymce.init({
 					selector: 'textarea.' + mceClass,
-					toolbar: toolbar,
 					plugins: [
-						"save"
+						 "advlist autolink lists link image charmap print preview anchor",
+						 "searchreplace visualblocks code fullscreen",
+						 "insertdatetime media table contextmenu paste moxiemanager"
 					],
+					toolbar: toolbar,
 					height: txtArea.parentElement.offsetHeight * parseInt(element.style.maxHeight) / 100,
 					setup: function (editor) {
 
