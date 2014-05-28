@@ -1,6 +1,6 @@
 # lswRichTextEditors
 
-## Sample project showing how to integrate 3 Rich Text Editors into an LightSwitch HTML application.
+## Sample project showing how to integrate 3 Rich Text Editors into a LightSwitch HTML application.
 
 The project works with the following:
 * ckEditor
