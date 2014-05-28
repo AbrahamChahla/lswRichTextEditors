@@ -34,9 +34,4 @@
         Target="ServiceInterface:LightSwitchServiceApplicationGroup" />
     </GlobalAttributeGroup.Attributes>
   </GlobalAttributeGroup>
-  <Application.NavigationItems>
-    <ApplicationNavigationMethodLink
-      Name="link"
-      Method="!module/Methods[showBrowseArticles]" />
-  </Application.NavigationItems>
 </Application>

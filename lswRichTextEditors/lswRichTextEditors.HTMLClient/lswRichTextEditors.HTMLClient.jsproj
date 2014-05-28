@@ -487,6 +487,10 @@
     <Content Include="Scripts\tinymce\tinymce.min.js" />
     <Content Include="Scripts\winjs-1.0.js" />
     <Content Include="Scripts\winjs-1.0.min.js" />
+    <Content Include="UserCode\Article.lsml.js">
+      <DependentUpon>
+      </DependentUpon>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ServiceMetadataReference Include="..\lswRichTextEditors.Server\lswRichTextEditors.Server.csproj">

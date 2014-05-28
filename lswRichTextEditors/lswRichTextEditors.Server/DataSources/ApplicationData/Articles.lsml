@@ -37,11 +37,7 @@
       </EntityProperty>
       <EntityProperty
         Name="Body"
-        PropertyType=":String">
-        <EntityProperty.Attributes>
-          <Required />
-        </EntityProperty.Attributes>
-      </EntityProperty>
+        PropertyType=":String?" />
       <EntityProperty
         Name="CreatedBy"
         IsReadOnly="True"
