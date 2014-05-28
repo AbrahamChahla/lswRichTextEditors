@@ -1,0 +1,82 @@
+﻿/* Replace user-splash-screen.png with your own splash screen image */
+#msls-id-app-loading .msls-app-loading-img {
+    background-image: url(Images/user-splash-screen.png);
+}
+
+/* Font families for screen and dialog headers.  Font families for content inside a screen 
+    or dialog are determined by the theme's global font family setting. */
+.msls-header .ui-title {
+    font-family: 'Segoe Light', 'Segoe UI Light', 'Segoe UI', 'Segoe WP Light', 'Roboto Light','Frutiger','Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 200;
+}
+
+/* Customizable font styles for screen controls */
+.msls-font-style-large {
+}
+
+.msls-font-style-normal {
+}
+
+.msls-font-style-small {
+}
+
+/* Uncomment the following lines if you want to use certain jQuery Mobile listview features such as 
+    count bubbles and icons inside LightSwitch lists. jQuery Mobile relies on list items using 
+    position:relative for these features.  However, this setting performs poorly on certain mobile 
+    devices (webkit based in particular) when there are large numbers of items in the list. */
+/*
+.msls-ctl-list .ui-listview > .ui-li,
+.msls-ctl-list .ui-field-contain.ui-li {
+    position: relative;
+}
+*/
+
+/* Phone media query (portrait and landscape) */
+@media 
+screen and (max-width: 400px) and (orientation: portrait), 
+screen and (max-width: 640px) and (max-height: 400px) and (orientation: landscape) {
+}
+
+
+/* ===============================================================*/
+/* Adjustments made to have Kendo UI have the look of LightSwitch */
+/* ===============================================================*/
+
+/* Remove the rounded corners of the control */
+.k-block, .k-button, .k-textbox, .k-drag-clue, .k-touch-scrollbar, 
+.k-window, .k-window-titleless .k-window-content, .k-window-action, 
+.k-inline-block, .k-grid .k-filter-options, 
+.k-grouping-header .k-group-indicator, .k-autocomplete, 
+.k-multiselect, .k-combobox, .k-dropdown, .k-dropdown-wrap, 
+.k-datepicker, .k-timepicker, .k-colorpicker, .k-datetimepicker, 
+.k-notification, .k-numerictextbox, .k-picker-wrap, .k-numeric-wrap, 
+.k-colorpicker, .k-list-container, .k-calendar-container, .k-calendar td, 
+.k-calendar .k-link, .k-treeview .k-in, .k-editor-inline, 
+.k-tooltip, .k-tile, .k-slider-track, .k-slider-selection, .k-upload {
+	border-radius: 0 !important;
+}
+
+/* Margin is off from other controls */
+.k-editor-inline {
+	border-radius: 0 !important;
+	border: 1px solid #ababab !important;
+	margin-top: 4px;
+}
+
+.k-group-start.k-tool {
+	border-radius: 0 !important;
+}
+
+.k-group-end.k-tool {
+	border-radius: 0 !important;
+}
+
+.msls-footer-content {
+	float: left !important;
+}
+
+.titles-bar .msls-buttons-row.msls-screen-buttons {
+	/*float: left;
+	padding-right: 15px;*/
+}
+
