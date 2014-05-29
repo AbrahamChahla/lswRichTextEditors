@@ -14,3 +14,13 @@ myapp.TinyMCE.Body_postRender = function (element, contentItem) {
 	lsWire.editors.initializeTinyMCE(element, contentItem);
 
 };
+myapp.TinyMCE.DeleteArticle_execute = function (screen) {
+
+	if (screen.Article.Id !== 1) {
+		screen.Article.deleteEntity();
+		myapp.commitChanges();
+	} else {
+		msls.showMessageBox('This entity cannot be deleted...');
+	}
+
+};

@@ -32,3 +32,14 @@ myapp.ckEditor.beforeApplyChanges = function (screen) {
 	};
 
 };
+
+myapp.ckEditor.DeleteArticle_execute = function (screen) {
+
+	if (screen.Article.Id !== 1) {
+		screen.Article.deleteEntity();
+		myapp.commitChanges();
+	} else {
+		msls.showMessageBox('This entity cannot be deleted...');
+	}
+
+};

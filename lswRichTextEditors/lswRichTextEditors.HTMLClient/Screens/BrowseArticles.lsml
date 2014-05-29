@@ -106,10 +106,8 @@
                   Property="Microsoft.LightSwitch.MobileWeb:RootCollectionControl/Properties[ItemTap]">
                   <ScreenExpressionTree>
                     <ChainExpression>
-                      <MemberExpression
-                        Member="BrowseArticles/Properties[Articles]" />
                       <CallExpression
-                        Target="viewSelected" />
+                        Target="BrowseArticles/Methods[Articles_ItemTap]" />
                     </ChainExpression>
                   </ScreenExpressionTree>
                 </ControlPropertySource>
@@ -229,7 +227,7 @@
                 Kind="Command">
                 <ContentItem.Attributes>
                   <DisplayName
-                    Value="Tiny MCE" />
+                    Value="TinyMCE" />
                 </ContentItem.Attributes>
                 <ContentItem.PropertySources>
                   <ControlPropertySource
@@ -476,6 +474,8 @@
           Name="dialogName"
           ParameterType=":String" />
       </ScreenMethod>
+      <ScreenMethod
+        Name="Articles_ItemTap" />
     </Screen.Methods>
     <Screen.Properties>
       <ScreenCollectionProperty
